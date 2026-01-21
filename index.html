@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="as">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 22nd Birthday Yasin</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(135deg,#ff6a88,#ffb347);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Balloons */
+.balloon{
+    position:absolute;
+    bottom:-80px;
+    width:40px;
+    height:55px;
+    border-radius:50%;
+    animation:float 7s infinite ease-in;
+}
+.balloon::after{
+    content:'';
+    position:absolute;
+    width:2px;
+    height:35px;
+    background:#555;
+    left:50%;
+    top:55px;
+}
+.balloon:nth-child(1){left:15%;background:#ff4d4d;}
+.balloon:nth-child(2){left:40%;background:#4dd2ff;animation-delay:2s;}
+.balloon:nth-child(3){left:70%;background:#ffd633;animation-delay:4s;}
+
+@keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(-120vh);}
+}
+
+/* Card */
+.card{
+    width:90%;
+    max-width:360px;
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(8px);
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    animation:pop 1s ease;
+    z-index:2;
+}
+
+@keyframes pop{
+    from{transform:scale(0.7);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+.card img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:4px solid white;
+    object-fit:cover;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 5px white;}
+    to{box-shadow:0 0 20px yellow;}
+}
+
+h1{margin:10px 0;}
+h2{color:yellow;}
+
+video{
+    width:100%;
+    margin-top:10px;
+    border-radius:15px;
+}
+
+/* Sound button */
+.sound-btn{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    background:#ff4081;
+    color:white;
+    font-size:14px;
+}
+
+/* Cake */
+.cake{
+    margin:15px auto;
+    width:120px;
+}
+.layer{
+    height:30px;
+    background:#ff7a7a;
+    margin-top:-8px;
+    border-radius:8px;
+}
+.candle{
+    width:8px;
+    height:25px;
+    background:white;
+    margin:0 auto;
+    position:relative;
+}
+.flame{
+    width:12px;
+    height:12px;
+    background:orange;
+    border-radius:50%;
+    position:absolute;
+    top:-10px;
+    left:-2px;
+    animation:flicker .4s infinite;
+}
+
+@keyframes flicker{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.4);}
+    100%{transform:scale(1);}
+}
+
+p{
+    font-size:15px;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+
+<div class="card">
+
+<img src="photo.jpg">
+
+<h1>🎉 Happy Birthday 🎉</h1>
+<h2>Dear Yasin</h2>
+
+<p>আজিৰ পৰা তুমি <b>22 বছৰ</b>ৰ হলে 🎊</p>
+
+<video id="bdayVideo" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<button class="sound-btn" onclick="toggleSound()">🔊 Sound On</button>
+
+<div class="cake">
+  <div class="candle"><div class="flame"></div></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
+
+<p style="margin-top:10px;font-size:14px;line-height:1.7;">
+<b>Happy Birthday আমার বেস্ট ফ্রেন্ড Yasin 💙</b><br><br>
+
+আজকের দিনটা সাধারণ কোনো দিন না,<br>
+আজকের দিনটা সেই দিনের স্মৃতি—<br>
+যেদিন এই পৃথিবী একজন মানুষ পেল,<br>
+আর আমি পেলাম একজন ভাইয়ের মতো বন্ধু।<br><br>
+
+সবাই বন্ধুত্ব করে সুবিধার জন্য,<br>
+কিন্তু তুমি বন্ধুত্ব করেছো মন থেকে।<br>
+আমার ভালো সময়েই না,<br>
+আমার খারাপ সময়েও<br>
+তুমি নিঃশব্দে পাশে ছিলে—<br>
+এটাই তোমাকে আলাদা করেছে। 💙
+  </p>
+
+</div>
+
+<script>
+function toggleSound(){
+  var video = document.getElementById("bdayVideo");
+  if(video.muted){
+    video.muted = false;
+  }else{
+    video.muted = true;
+  }
+}
+</script>
+
+</body>
+</html>
