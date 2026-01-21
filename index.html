@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yasin</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ff6a88,#ffb347);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+.card{
+  width:92%;
+  max-width:360px;
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(8px);
+  padding:20px 18px 30px;
+  border-radius:22px;
+  text-align:center;
+  color:white;
+}
+
+.card img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:4px solid white;
+  object-fit:cover;
+  box-shadow:0 0 20px rgba(255,255,255,0.8);
+}
+
+h1{margin:10px 0;}
+h2{color:yellow;margin-bottom:6px;}
+
+video{
+  width:100%;
+  border-radius:14px;
+  margin:12px 0;
+}
+
+button{
+  background:#ff4081;
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:20px;
+  margin-bottom:12px;
+}
+
+.cake{
+  margin:18px auto;
+  width:120px;
+  cursor:pointer;
+  position:relative;
+}
+.layer{
+  height:30px;
+  background:#ff7a7a;
+  margin-top:-8px;
+  border-radius:8px;
+}
+.candle{
+  width:8px;
+  height:25px;
+  background:white;
+  margin:0 auto;
+  position:relative;
+}
+.flame{
+  width:12px;
+  height:12px;
+  background:orange;
+  border-radius:50%;
+  position:absolute;
+  top:-10px;
+  left:-2px;
+  animation:flicker .4s infinite;
+}
+@keyframes flicker{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.4);}
+  100%{transform:scale(1);}
+}
+.cut-line{
+  display:none;
+  position:absolute;
+  top:50%;
+  width:100%;
+  height:3px;
+  background:white;
+}
+
+#wishText{
+  margin-top:16px;
+  padding:18px;
+  font-size:15px;
+  line-height:1.9;
+  background:rgba(0,0,0,0.22);
+  border-radius:16px;
+}
+#cutMsg{
+  display:none;
+  margin-top:8px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="photo.jpg">
+
+<h1>🎉 Happy Birthday 🎉</h1>
+<h2>Dear Yasin</h2>
+<p>আজিৰ পৰা তুমি <b>22 বছৰ</b>ৰ হলে 🎊</p>
+
+<video id="vid" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<button onclick="toggleSound()">🔊 Sound On / Off</button>
+
+<div class="cake" onclick="cutCake()">
+  <div class="candle"><div class="flame"></div></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="cut-line"></div>
+</div>
+
+<div id="cutMsg">🎉 Cake কাটা হলো! Happy Birthday Yasin 🎉</div>
+
+<div id="wishText">
+<b>Happy Birthday আমার বেস্ট ফ্রেন্ড Yasin 💙</b><br><br>
+
+আজকের দিনটা সাধারণ কোনো দিন না,<br>
+আজকের দিনটা সেই দিনের স্মৃতি—<br>
+যেদিন এই পৃথিবী একজন মানুষ পেল,<br>
+আর আমি পেলাম একজন ভাইয়ের মতো বন্ধু।<br><br>
+
+সবাই বন্ধুত্ব করে সুবিধার জন্য,<br>
+কিন্তু তুমি বন্ধুত্ব করেছো মন থেকে।<br>
+আমার ভালো সময়েই না,<br>
+আমার খারাপ সময়েও<br>
+তুমি নিঃশব্দে পাশে ছিলে—<br>
+এটাই তোমাকে আলাদা করেছে 💙
+</div>
+
+</div>
+
+<script>
+function toggleSound(){
+  let v=document.getElementById("vid");
+  v.muted=!v.muted;
+}
+function cutCake(){
+  document.querySelector(".cut-line").style.display="block";
+  document.getElementById("cutMsg").style.display="block";
+}
+</script>
+
+</body>
+</html>
