@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yasin</title>
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  background:url("bg.jpg") center/cover no-repeat fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:sans-serif;
+}
+
+.card{
+  width:92%;
+  max-width:420px;
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(16px);
+  border-radius:28px;
+  padding:20px;
+  text-align:center;
+}
+
+.profile{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:4px solid #fff;
+  object-fit:cover;
+}
+
+h1{color:#fff;margin:10px 0}
+h2{color:yellow;margin:5px 0}
+p{color:#fff}
+
+video{
+  width:100%;
+  border-radius:18px;
+  margin:12px 0;
+}
+
+/* Cake */
+.cake{
+  width:160px;
+  margin:20px auto;
+  cursor:pointer;
+  animation:float 3s ease-in-out infinite;
+}
+
+.layer{
+  height:35px;
+  border-radius:12px;
+}
+.l1{background:#ff9aa2}
+.l2{background:#ff6f91;margin-top:5px}
+.l3{background:#ff4d6d;margin-top:5px}
+
+.candle{
+  text-align:center;
+  font-size:26px;
+}
+
+@keyframes float{
+  50%{transform:translateY(-10px)}
+}
+
+.msg{
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:16px;
+  margin-top:18px;
+  color:#fff;
+  line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="photo.jpg" class="profile">
+
+<h1>🎉 Happy Birthday 🎉</h1>
+<h2>Dear Yasin</h2>
+<p>আজিৰ পৰা তুমি 22 years 🎂</p>
+
+<video autoplay muted loop>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<!-- SONG -->
+<audio id="song" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CAKE (tap = song start + cake cut) -->
+<div class="cake" onclick="cutCake()">
+  <div class="candle">🔥</div>
+  <div class="layer l1"></div>
+  <div class="layer l2"></div>
+  <div class="layer l3"></div>
+</div>
+
+<p id="cakeText">🎂 Cake কাটিবলৈ tap কৰা</p>
+
+<div class="msg">
+Happy Birthday আমার বেস্ট ফ্রেন্ড Yasin 💙  
+আজকের দিনটা সাধারণ কোনো দিন না,  
+আজকের দিনটা সেই দিনের স্মৃতি—  
+যেদিন এই পৃথিবী একজন মানুষ পেল,  
+আর আমি পেলাম একজন ভাইয়ের মতো বন্ধু।
+</div>
+
+</div>
+
+<script>
+function cutCake(){
+  document.getElementById("song").play();
+  document.getElementById("cakeText").innerHTML =
+  "🎉 Cake কাটা হ’ল! Happy Birthday Yasin 💙";
+}
+</script>
+
+</body>
+  </html>
