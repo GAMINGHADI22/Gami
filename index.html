@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yasin</title>
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  background:url("bg.jpg") center/cover no-repeat fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:sans-serif;
+}
+
+.card{
+  width:92%;
+  max-width:420px;
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(16px);
+  border-radius:28px;
+  padding:20px 16px;
+  text-align:center;
+}
+
+.profile{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:4px solid #fff;
+  object-fit:cover;
+}
+
+h1{color:#fff;margin:10px 0}
+h2{color:yellow;margin:5px 0}
+p{color:#fff}
+
+video{
+  width:100%;
+  border-radius:18px;
+  background:#000;
+  margin:12px 0;
+}
+
+/* 3D Cake */
+.cake3d{
+  width:160px;
+  height:120px;
+  margin:20px auto;
+  position:relative;
+  transform-style:preserve-3d;
+  animation:float 3s ease-in-out infinite;
+  cursor:pointer;
+}
+
+.layer{
+  position:absolute;
+  width:160px;
+  height:35px;
+  border-radius:12px;
+}
+
+.top{background:#ff9aa2;top:0}
+.mid{background:#ff6f91;top:40px}
+.bottom{background:#ff4d6d;top:80px}
+
+.candle{
+  width:10px;
+  height:28px;
+  background:#ffd700;
+  position:absolute;
+  top:-28px;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:4px;
+}
+
+.candle::after{
+  content:"🔥";
+  position:absolute;
+  top:-20px;
+  left:-6px;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+.cut{
+  animation:cut 1s forwards;
+}
+
+@keyframes cut{
+  to{transform:rotateZ(-10deg) scale(.95)}
+}
+
+.msg{
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:16px;
+  margin-top:18px;
+  color:#fff;
+  line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="photo.jpg" class="profile">
+
+<h1>🎉 Happy Birthday 🎉</h1>
+<h2>Dear Yasin</h2>
+<p>আজিৰ পৰা তুমি 22 years 🎂</p>
+
+<video autoplay muted loop>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<!-- Auto Play Song -->
+<audio id="song" autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 3D Cake -->
+<div class="cake3d" onclick="cutCake()">
+  <div class="layer top"></div>
+  <div class="layer mid"></div>
+  <div class="layer bottom"></div>
+  <div class="candle"></div>
+</div>
+
+<p id="cakeText">🎂 Cake কাটিবলৈ tap কৰা 🎉</p>
+
+<div class="msg">
+Happy Birthday আমার বেস্ট ফ্রেন্ড Yasin 💙  
+আজকের দিনটা সাধারণ কোনো দিন না,  
+আজকের দিনটা সেই দিনের স্মৃতি—  
+যেদিন এই পৃথিবী একজন মানুষ পেল,  
+আর আমি পেলাম একজন ভাইয়ের মতো বন্ধু।  
+</div>
+
+</div>
+
+<script>
+function cutCake(){
+  document.querySelector(".cake3d").classList.add("cut");
+  document.getElementById("cakeText").innerHTML =
+  "🎉 Cake কাটা হ’ল! Happy Birthday Yasin 💙";
+}
+</script>
+
+</body>
+</html>
