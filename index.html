@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yasin</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:url("bg.jpg") no-repeat center center;
+  background-size:cover;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:20px 0;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.25);
+  z-index:-1;
+}
+
+/* NAME BOX */
+#nameBox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.nameCard{
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  padding:25px;
+  border-radius:20px;
+  width:90%;
+  max-width:300px;
+  text-align:center;
+  animation:pop .5s ease;
+}
+.nameCard h2{color:#fff;}
+.nameCard input{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  margin:15px 0;
+}
+.nameCard button{
+  padding:10px 25px;
+  border:none;
+  border-radius:20px;
+  background:#ff4081;
+  color:#fff;
+  font-size:16px;
+}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+
+.card{
+  width:95%;
+  max-width:360px;
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(10px);
+  border-radius:25px;
+  padding:20px;
+  text-align:center;
+  color:#fff;
+}
+.profile{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:4px solid #fff;
+  object-fit:cover;
+  margin-top:-10px;
+}
+h1{margin:10px 0 0}
+h2{color:yellow;margin:5px 0}
+
+video{
+  width:100%;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+.btn{
+  padding:8px 20px;
+  border:none;
+  border-radius:20px;
+  background:#ff4081;
+  color:white;
+  margin:5px;
+}
+
+.cake{
+  margin:15px auto;
+  width:120px;
+  height:80px;
+  background:#ff7a7a;
+  border-radius:10px;
+  position:relative;
+}
+.candle{
+  width:8px;height:20px;
+  background:#fff;
+  position:absolute;
+  top:-20px;left:50%;
+  transform:translateX(-50%);
+}
+.flame{
+  width:12px;height:12px;
+  background:orange;
+  border-radius:50%;
+  position:absolute;
+  top:-32px;left:50%;
+  transform:translateX(-50%);
+  animation:flicker .8s infinite;
+}
+@keyframes flicker{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
+
+.msg{
+  background:rgba(0,0,0,.3);
+  padding:15px;
+  border-radius:15px;
+  margin-top:10px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAME INPUT -->
+<div id="nameBox">
+  <div class="nameCard">
+    <h2>💙 তোমাৰ নাম লিখা</h2>
+    <input id="userName" placeholder="Your name">
+    <button onclick="start()">Continue 🎉</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="photo.jpg" class="profile">
+  <h1>🎉 Happy Birthday 🎉</h1>
+  <h2>Dear Yasin</h2>
+  <p>আজিৰ পৰা তুমি <b>22 years</b> 🎂</p>
+
+  <video id="vd" src="video.mp4" autoplay muted loop></video>
+  <button class="btn" onclick="toggleSound()">🔊 Sound On / Off</button>
+
+  <div class="cake" onclick="cutCake()">
+    <div class="candle"></div>
+    <div class="flame" id="flame"></div>
+  </div>
+  <p id="cakeText">🎂 Cake কাটিবলৈ tap কৰা</p>
+
+  <div class="msg">
+    <b>Happy Birthday <span id="showName"></span> 💙</b><br><br>
+    আজকের দিনটা সাধারণ কোনো দিন না,<br>
+    আজকের দিনটা সেই দিনের স্মৃতি—<br>
+    যেদিন এই পৃথিবী একজন মানুষ পেল,<br>
+    আর আমি পেলাম একজন ভাইয়ের মতো বন্ধু।
+  </div>
+</div>
+
+<script>
+function start(){
+  let n=document.getElementById("userName").value.trim();
+  if(!n){alert("নাম লিখা 😊");return;}
+  document.getElementById("showName").innerText=n;
+  document.getElementById("nameBox").style.display="none";
+}
+
+function toggleSound(){
+  let v=document.getElementById("vd");
+  v.muted=!v.muted;
+}
+
+function cutCake(){
+  document.getElementById("flame").style.display="none";
+  document.getElementById("cakeText").innerText="🎉 Cake কটা হল! Happy Birthday Yasin 🎉";
+}
+</script>
+
+</body>
+</html>
